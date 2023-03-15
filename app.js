@@ -26,6 +26,34 @@ app.get("/contact", (request, response, next) => {
 })
 
 
+//GET /pizzas
+app.get("/pizzas", (request, response, next) => {
+    
+    const pizzasArr = [
+        {
+          title: 'Pizza Margarita',
+          price: 12,
+          imageFile: 'pizza-margarita.jpg',
+        },
+        {
+            title: "Veggie Pizza",
+            price: 15,
+            imageFile: "pizza-veggie.jpg"
+        }, 
+        {
+            title: "Seafood Pizza",
+            imageFile: "pizza-seafood.jpg"
+        }
+    ];
+
+    const data = {
+        pizzas: pizzasArr
+    }
+
+    response.render("product-list", data);
+
+})
+
 //GET /pizzas/margarita
 app.get("/pizzas/margarita", (request, response, next) => {
 
